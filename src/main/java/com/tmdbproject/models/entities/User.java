@@ -1,4 +1,4 @@
-package com.tmdbproject.models;
+package com.tmdbproject.models.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,13 +12,23 @@ public class User {
     private long userId;
     private String userName;
     private String password;
+    private Role role;
 
     public User() {
     }
 
-    public User(String userName, String password) {
+    public User(String userName, String password, Role role) {
         this.userName = userName;
         this.password = password;
+        this.role = role;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public long getUserId() {

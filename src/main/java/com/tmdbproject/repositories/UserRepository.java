@@ -1,6 +1,6 @@
 package com.tmdbproject.repositories;
 
-import com.tmdbproject.models.User;
+import com.tmdbproject.models.entities.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
