@@ -1,5 +1,6 @@
 package com.tmdbproject.services;
 
+import com.tmdbproject.models.entities.User;
 import com.tmdbproject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,5 +12,9 @@ public class UserService {
     @Autowired
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    public void save(User user) {
+        userRepository.save(user);
     }
 }

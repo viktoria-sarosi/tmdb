@@ -10,4 +10,7 @@ public enum Role {
     }
     public final String name;
 
+    public String getName() {
+        return name;
+    }
 }
