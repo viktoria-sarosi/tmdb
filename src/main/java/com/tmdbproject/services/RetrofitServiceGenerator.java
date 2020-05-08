@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
     @Service
     public class RetrofitServiceGenerator {
 
-        private static final String API_ADDRESS = System.getenv("https://restcountries.eu/rest/v2");
+        private static final String API_ADDRESS = "https://restcountries.eu/rest/v2/";
 
         private static Retrofit.Builder builder
                 = new Retrofit.Builder()
