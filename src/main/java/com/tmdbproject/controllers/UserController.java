@@ -28,6 +28,6 @@ public class UserController {
     @PostMapping("/register")
     public String registerNewUser(@ModelAttribute User user) {
         userService.save(user);
-        return "login";
+        return "index";
     }
 }

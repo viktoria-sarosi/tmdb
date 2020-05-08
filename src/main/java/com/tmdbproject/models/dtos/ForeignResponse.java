@@ -16,11 +16,11 @@ public class ForeignResponse {
     public ForeignResponse() {
     }
 
-    public String getCountry() {
+    public String getName() {
         return name;
     }
 
-    public void setCountry(String country) {
+    public void setName(String country) {
         this.name = country;
     }
 

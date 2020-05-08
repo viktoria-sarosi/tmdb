@@ -23,6 +23,11 @@ public class RestTmdbController {
         return "<h1>Welcome!<h1>";
     }
 
+    @GetMapping("/admin")
+    public String adminGreeting() {
+         return "<h1>Welcome Admin!<h1>";
+    }
+
     @GetMapping("/all")
     public ResponseEntity getAllCountriesWithCapitalRegionAndPopulation() throws IOException {
         return ResponseEntity.ok().body(countriesAPIService.getAll());
