@@ -30,7 +30,18 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
+        if (System.getenv("COUNTRIES_ENVIRONMENT").equals("PROD")) {
+            auth.userDetailsService(userDetailsService);
+        } else if (System.getenv("COUNTRIES_ENVIRONMENT").equals("TEST")) {
+            auth.inMemoryAuthentication()
+                    .withUser("user")
+                    .password("password")
+                    .roles("ROLE_USER")
+                    .and()
+                    .withUser("admin")
+                    .password("admin")
+                    .roles("ROLE_ADMIN");
+        }
     }
 
     @Override
@@ -40,7 +51,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/admin").hasRole("ADMIN")
                 .antMatchers("/index", "/all").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/authenticate", "/register").permitAll()
-               //.antMatchers("/register").permitAll()
+                //.antMatchers("/register").permitAll()
                 //.antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()

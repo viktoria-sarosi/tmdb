@@ -30,6 +30,8 @@ dependencies {
 
     compile "io.jsonwebtoken:jjwt:0.9.1"
     compile "javax.xml.bind:jaxb-api:2.3.0"
+    compile "org.springframework.boot:spring-boot-configuration-processor"
+
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
