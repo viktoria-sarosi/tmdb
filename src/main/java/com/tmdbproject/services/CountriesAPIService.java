@@ -25,4 +25,14 @@ public class CountriesAPIService {
 
         return foreignResponse.body();
     }
+
+    public List<ForeignResponse> getByCountry(String country) throws IOException {
+        RetrofitIService retrofitIService = RetrofitServiceGenerator.createService(RetrofitIService.class);
+
+        Call<List<ForeignResponse>> call = retrofitIService.renderCountry(country);
+        Response<List<ForeignResponse>> foreignResponse = call.execute();
+
+        return foreignResponse.body();
+
+    }
 }

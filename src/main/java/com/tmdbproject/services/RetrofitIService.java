@@ -8,9 +8,9 @@ import retrofit2.http.Path;
 import java.util.List;
 
 public interface RetrofitIService {
-    @GET("name/{name}?fields=capital;region;population")
-    Call<ForeignResponse> renderCountry(@Path("name") String countryName);
+    @GET("name/{name}?fields=name;capital;region;population")
+    Call<List<ForeignResponse>> renderCountry(@Path("name") String countryName);
 
-    @GET("all?fields=name;capital")
+    @GET("all?fields=name;capital;region;population")
     Call<List<ForeignResponse>> renderAllCountriesAndCapitals();
 }
